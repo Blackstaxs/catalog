@@ -1,0 +1,100 @@
+<html>
+
+<style>
+/* Style the body */
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+/* Header/Logo Title */
+.roles {
+  
+  text-align: center;
+  background: #FFF8F9;
+  color: white;
+  font-size: 30px;
+  border-color: #77F142;
+  float: left;
+  width: 30%;
+  padding: 10px;
+  height: 400px;
+  margin-left: 20px;
+}
+
+.tank {
+  
+  background: #5B42F1;
+  
+}
+
+.tanklogo {
+  
+  background-image: url("https://vignette.wikia.nocookie.net/finalfantasy/images/0/05/FFXIV_Tank_Icon.png");
+  background-size: 100% 100%;
+  
+}
+
+
+.healer {
+  
+  background: #60DA54;
+  
+}
+
+.dps {
+  
+  background: #EF3E48;
+  
+}
+
+.column {
+  float: left;
+  width: 30%;
+  padding: 10px;
+  height: 400px; /* Should be removed. Only for demonstration */
+}
+
+
+}
+
+</style>
+
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+	</head>
+	{% include 'login.html' %}
+	{% include 'header.html' %}
+
+<body>
+	
+	<div class = 'roles'>
+		<a href="/tank">
+		
+		<h1 class = 'tank'>Tank</h1>
+  		<p>High in HP and trained in defense, a tank serves as the party's shield. Skilled at keeping a foe's attention and bearing the brunt of enemy attacks.</p>
+		</a>
+	
+	</div>
+
+	<div class = 'roles'>
+		<a href="/healer">
+		
+		<h1 class = 'healer'>Healer</h1>
+  		<p>Healers use restorative arts to mend wounded companions. They can also help to mitigate damage, remove detrimental effects, and even bring fallen allies back to life.</p>
+		</a>
+	
+	</div>
+
+	<div class = 'roles'>
+		<a href="/dps">
+		
+		<h1 class = 'dps'>Dps</h1>
+  		<p>Magical ranged DPS attack foes using a variety of arcane arts. Movement is restricted by casting times, but they excel at inflicting high burst damage.</p>
+		</a>
+	
+	</div>
+
+</body>
+
+</html>

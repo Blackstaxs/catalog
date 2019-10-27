@@ -1,0 +1,67 @@
+<html>
+<style>
+/* Style the body */
+body {
+  font-family: Arial;
+  margin: 0;
+  background-color: #333333
+}
+
+.roles {
+  
+  text-align: center;
+  background: #333333;
+  color: white;
+  font-size: 20px;
+  border-color: #77F142;
+  padding: 10px;
+  margin-left: 20px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.button1 {
+  background-color: #16718E;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.name {
+    width: 50%;
+    font-size: 30px;
+}
+
+}
+
+</style>
+<head>
+	
+	</head>
+	{% include 'login.html' %}
+  {% include 'header.html' %}
+<body>
+<div class = 'roles'>
+<form action= "{{url_for('editAbility', job_id = job_id, ability_id=item.id)}}" method = 'POST'>
+
+<p>Ability:</p>
+<input type = 'text' size='30' name = 'name' placeholder = '{{item.name}}' required minlength="2" maxlength="30">
+<input type = 'number' size='30' name = 'level' placeholder = '{{item.level}}' value="1" min="1" max="80">
+<input type = 'text' size='30' name = 'description' placeholder = '{{item.description}}' required minlength="10" maxlength="200">
+<input type='submit' value='Edit' class="button1">
+</form>
+<a href= '/'>Cancel</a>
+</div>
+</body>
+
+
+
+
+
+</html>

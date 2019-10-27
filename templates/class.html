@@ -1,0 +1,91 @@
+<html>
+<style>
+/* Style the body */
+body {
+  font-family: Arial;
+  margin: 0;
+  background-color: #333333
+}
+
+.roles {
+  
+  text-align: center;
+  background: #333333;
+  color: white;
+  font-size: 20px;
+  border-color: #77F142;
+  padding: 2px;
+  margin-left: 20px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.button1 {
+  background-color: #16718E;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.name {
+    width: 50%;
+    font-size: 30px;
+}
+.img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+
+}
+
+</style>
+<head>
+	
+	</head>
+	{% include 'login.html' %}
+  {% include 'header.html' %}
+<body>
+	
+<div class = 'roles'>
+		<div class = 'name'>
+		<h1>{{ job.name }}</h1>
+		<img src={{ job.img }} alt="Cheetah!" class="img" />
+	</div>
+
+
+{% for i in items %}
+
+<div class="roles">
+	<div class = 'nameAndPrice'>
+		<span class = 'name'><p>{{i.name}}</p></span>
+		<p>level {{i.level}} </p>
+	</span>
+	</div>
+
+	<div class = 'description'>
+		<p>{{i.description}}</p>
+	</div>
+	{% if login %}
+
+	
+	<a href="/jobs/{{job.id}}/{{i.id}}/edit" class="button1">edit</a>
+	
+
+	{% endif %}
+</div>
+
+
+{% endfor %}
+<a href="/jobs/{{job.id}}/new" class="button1">New Ability</a>
+</body>
+
+</html>
